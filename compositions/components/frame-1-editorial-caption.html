@@ -1,0 +1,196 @@
+<!-- Editorial Emphasis Caption for Frame 1 - Problem Statement -->
+<!-- Dual-font system with Nectool branding colors -->
+
+<div id="frame-1-editorial-caption" class="frame-1-caption-container">
+  <style>
+    .frame-1-caption-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .editorial-caption-stage {
+      position: relative;
+      width: 1600px;
+      max-width: 90vw;
+      text-align: center;
+    }
+
+    .caption-block {
+      position: absolute;
+      opacity: 0;
+      transform-origin: center center;
+      will-change: transform, opacity;
+      backface-visibility: hidden;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .caption-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      line-height: 1.2;
+      white-space: nowrap;
+      flex-wrap: wrap;
+    }
+
+    .caption-line + .caption-line {
+      margin-top: 12px;
+    }
+
+    .word {
+      display: inline-block;
+      font-family: "Montserrat", sans-serif;
+      will-change: transform, opacity;
+      backface-visibility: hidden;
+      text-shadow:
+        0 2px 8px rgba(255, 255, 255, 0.4),
+        0 4px 16px rgba(255, 255, 255, 0.2);
+    }
+
+    .word--normal {
+      font-size: 48px;
+      font-weight: 400;
+      color: #00051B;
+    }
+
+    .word--emphasis {
+      font-size: 72px;
+      font-weight: 700;
+      color: #326CDE;
+      letter-spacing: -0.02em;
+    }
+  </style>
+
+  <div class="editorial-caption-stage" id="caption-stage"></div>
+</div>
+
+<script>
+  (function() {
+    // Frame 1 caption: "Endless meetings. Tight deadlines. Struggling with colleagues."
+    // Words with approximate timing for 5-second frame
+    var W = [
+      { text: "Endless", start: 0.0, end: 0.4 },
+      { text: "meetings.", start: 0.4, end: 0.8 },
+      { text: "Tight", start: 1.0, end: 1.4 },
+      { text: "deadlines.", start: 1.4, end: 1.8 },
+      { text: "Struggling", start: 2.2, end: 2.7 },
+      { text: "with", start: 2.7, end: 2.95 },
+      { text: "colleagues.", start: 2.95, end: 3.5 },
+    ];
+
+    // Layout blocks with emphasis on key problem words
+    var BLOCKS = [
+      {
+        line1: [[0, "n"], [1, "n"]],  // Endless meetings.
+        line2: null,
+      },
+      {
+        line1: [[2, "n"], [3, "n"]],  // Tight deadlines.
+        line2: null,
+      },
+      {
+        line1: [[4, "e"], [5, "n"], [6, "n"]],  // Struggling with colleagues.
+        line2: null,
+      },
+    ];
+
+    var CLASS_MAP = { n: "word word--normal", e: "word word--emphasis" };
+    var DURATION = 5;
+    var SAFE_WIDTH = 1600;
+
+    // Build caption blocks
+    function buildBlocks() {
+      var stage = document.getElementById("caption-stage");
+      BLOCKS.forEach(function (block, bi) {
+        var el = document.createElement("div");
+        el.className = "caption-block";
+        el.id = "b" + bi;
+
+        var l1 = document.createElement("div");
+        l1.className = "caption-line";
+        l1.id = "b" + bi + "L1";
+        block.line1.forEach(function (pair, wi) {
+          var span = document.createElement("span");
+          span.className = CLASS_MAP[pair[1]];
+          span.id = "b" + bi + "L1w" + wi;
+          span.textContent = W[pair[0]].text;
+          l1.appendChild(span);
+        });
+        el.appendChild(l1);
+
+        if (block.line2) {
+          var l2 = document.createElement("div");
+          l2.className = "caption-line";
+          l2.id = "b" + bi + "L2";
+          block.line2.forEach(function (pair, wi) {
+            var span = document.createElement("span");
+            span.className = CLASS_MAP[pair[1]];
+            span.id = "b" + bi + "L2w" + wi;
+            span.textContent = W[pair[0]].text;
+            l2.appendChild(span);
+          });
+          el.appendChild(l2);
+        }
+
+        stage.appendChild(el);
+      });
+    }
+
+    buildBlocks();
+
+    // Animate timeline
+    if (typeof gsap !== "undefined") {
+      var tl = gsap.timeline({ paused: true });
+
+      BLOCKS.forEach(function (block, bi) {
+        var el = document.getElementById("b" + bi);
+        var start = W[block.line1[0][0]].start;
+        var nextStart = bi < BLOCKS.length - 1 ? W[BLOCKS[bi + 1].line1[0][0]].start : DURATION;
+
+        // Hide other blocks
+        BLOCKS.forEach(function (_, oi) {
+          if (oi !== bi) tl.set(document.getElementById("b" + oi), { opacity: 0 }, start);
+        });
+
+        // Show current block
+        tl.set(el, { opacity: 1, scale: 0.95, y: 20 }, start);
+        tl.to(el, { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: "power2.out" }, start);
+
+        // Word-by-word entry
+        block.line1.forEach(function (pair, wi) {
+          var wordEl = document.getElementById("b" + bi + "L1w" + wi);
+          var wordStart = W[pair[0]].start;
+          tl.set(wordEl, { opacity: 0, scale: 0.9 }, start);
+          tl.to(wordEl, { opacity: 1, scale: 1, duration: 0.2, ease: "power2.out" }, wordStart);
+        });
+
+        if (block.line2) {
+          block.line2.forEach(function (pair, wi) {
+            var wordEl = document.getElementById("b" + bi + "L2w" + wi);
+            var wordStart = W[pair[0]].start;
+            tl.set(wordEl, { opacity: 0, scale: 0.9 }, start);
+            tl.to(wordEl, { opacity: 1, scale: 1, duration: 0.2, ease: "power2.out" }, wordStart);
+          });
+        }
+
+        // Hide block at next start
+        tl.to(el, { opacity: 0, duration: 0.3, ease: "power2.in" }, nextStart - 0.2);
+      });
+
+      tl.to({}, { duration: DURATION }, 0);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["frame-1-editorial-caption"] = tl;
+    }
+  })();
+</script>

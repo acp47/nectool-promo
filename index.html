@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920, height=1080">
+  <title>Nectool — 30 Second Promo</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      background: #FFFFFF;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    #root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .scene {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Captions */
+    .captions-container {
+      position: absolute;
+      bottom: 120px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .caption-text {
+      font-size: 36px;
+      font-weight: 600;
+      color: #00051B;
+      text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      max-width: 1600px;
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+
+    /* Audio */
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div data-hf-id="hf-j7pz" id="root" data-composition-id="main" data-start="0" data-duration="30" data-width="1920" data-height="1080">
+
+    <!-- Frame 1: Hook (0-5s) -->
+    <div data-hf-id="hf-h55q" id="frame-1-container" class="scene" data-composition-id="frame-1" data-composition-src="compositions/frames/01-hook.html" data-start="0" data-duration="5" data-track-index="1" data-width="1920" data-height="1080"></div>
+
+    <!-- Frame 2: Audience (5-13s) -->
+    <div data-hf-id="hf-talg" id="frame-2-container" class="scene" data-composition-id="frame-2" data-composition-src="compositions/frames/02-audience.html" data-start="5" data-duration="8" data-track-index="1" data-width="1920" data-height="1080"></div>
+
+    <!-- Frame 3: CTA (13-30s) -->
+    <div data-hf-id="hf-v5ti" id="frame-3-container" class="scene" data-composition-id="frame-3" data-composition-src="compositions/frames/03-cta.html" data-start="13" data-duration="17" data-track-index="1" data-width="1920" data-height="1080"></div>
+
+    <!-- Captions Track -->
+    <div data-hf-id="hf-0q8a" id="captions-track" data-composition-id="captions" data-start="0" data-duration="30" data-track-index="2" data-width="1920" data-height="1080">
+      <div data-hf-id="hf-csjn" class="captions-container">
+        <div data-hf-id="hf-dq22" id="caption" class="caption-text">Styrk trivslen i dit arbejdsliv</div>
+      </div>
+
+      <script>
+        (function() {
+          const captionTl = gsap.timeline({ paused: true });
+          const captionEl = document.getElementById('caption');
+
+          // Caption 1 (0-5s): THE PROBLEM
+          captionTl.to(captionEl, { opacity: 1, duration: 0.5, ease: 'power2.out', overwrite: 'auto' }, 0);
+          captionTl.set(captionEl, { innerText: 'Endless meetings. Tight deadlines. Struggling with colleagues.' }, 0);
+          captionTl.to(captionEl, { opacity: 0, duration: 0.5, ease: 'power2.in', overwrite: 'auto' }, 4.8);
+
+          // Caption 2 (5-13s): COMPLEXITY → SOLUTION
+          captionTl.set(captionEl, { innerText: 'Expert knowledge. Actionable advice. Finally within reach.', opacity: 0 }, 5.1);
+          captionTl.to(captionEl, { opacity: 1, duration: 0.5, ease: 'power2.out', overwrite: 'auto' }, 5.1);
+          captionTl.to(captionEl, { opacity: 0, duration: 0.5, ease: 'power2.in', overwrite: 'auto' }, 12.8);
+
+          // Caption 3 (13-30s): THE SOLUTION + ACTION
+          captionTl.set(captionEl, { innerText: 'Nectool. Free. Simple. For restaurants, media, agriculture, offices. Any workplace. Start today. See what happens tomorrow.', opacity: 0 }, 13.1);
+          captionTl.to(captionEl, { opacity: 1, duration: 0.5, ease: 'power2.out', overwrite: 'auto' }, 13.1);
+          captionTl.to(captionEl, { opacity: 0, duration: 0.5, ease: 'power2.in', overwrite: 'auto' }, 29);
+
+          window.__timelines = window.__timelines || {};
+          window.__timelines['captions'] = captionTl;
+        })();
+      </script>
+    </div>
+
+    <!-- BGM Audio -->
+    <audio data-hf-id="hf-zdqh" id="bgm" data-start="0" data-duration="30" muted>
+      <source data-hf-id="hf-1913" src="assets/bgm/track.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script>
+    (function() {
+      const mainTl = gsap.timeline({ paused: true });
+
+      // Master timeline (empty — frame timings are declared via data-* attributes)
+      // The composition runtime handles frame mounting and sub-timeline playback
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines['main'] = mainTl;
+    })();
+  </script>
+</body>
+</html>

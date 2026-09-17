@@ -1,0 +1,70 @@
+<template id="frame-3-template">
+  <div data-hf-id="hf-hrpl" id="frame-3" data-composition-id="frame-3" data-width="1920" data-height="1080" style="position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #FFFFFF 0%, rgba(50, 108, 222, 0.05) 100%); padding: 60px 80px; font-family: 'Montserrat', sans-serif; overflow: hidden;">
+
+    <style>
+      /* Hero image container */
+      .hero-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1; }
+      .hero-image { width: 100%; height: 100%; object-fit: cover; opacity: 0; }
+      .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(50, 108, 222, 0.05) 100%); }
+
+      /* Content */
+      .message { text-align: center; margin-bottom: 80px; opacity: 0; position: relative; z-index: 5; }
+      .message h2 { font-size: 56px; font-weight: 700; color: #00051B; line-height: 1.2; margin-bottom: 20px; }
+      .message p { font-size: 20px; font-weight: 400; color: #B5F7D6; line-height: 1.6; }
+      .cta-section { text-align: center; opacity: 0; position: relative; z-index: 5; }
+      .logo { font-size: 48px; font-weight: 700; color: #326CDE; margin-bottom: 30px; letter-spacing: -0.02em; }
+      .tagline { font-size: 22px; font-weight: 400; color: #00051B; margin-bottom: 40px; }
+      .cta-button { display: inline-block; padding: 16px 48px; background: #326CDE; color: #FFFFFF; font-size: 18px; font-weight: 700; border: none; border-radius: 100px; cursor: pointer; transition: all 0.3s ease; text-decoration: none; }
+      .cta-button:hover { background: #1e4eb8; box-shadow: 0 8px 24px rgba(50, 108, 222, 0.3); }
+      .url { font-size: 18px; font-weight: 600; color: #326CDE; margin-top: 40px; }
+      .progress-bar { position: absolute; bottom: 0; left: 0; height: 3px; background: #326CDE; border-radius: 2px; width: 100%; z-index: 6; }
+    </style>
+
+    <!-- Hero image: Nectool platform solution -->
+    <div data-hf-id="hf-hero" class="hero-container">
+      <img data-hf-id="hf-hero-img" class="hero-image" src="assets/images/nectool-teams-page.png" alt="Nectool platform">
+      <div data-hf-id="hf-hero-overlay" class="hero-overlay"></div>
+    </div>
+
+    <div data-hf-id="hf-9f9x" class="message">
+      <h2 data-hf-id="hf-ja29">Nectool is Here.</h2>
+      <p data-hf-id="hf-2fo8">Free. Simple. For restaurants, media, agriculture, offices. Any workplace.</p>
+    </div>
+
+    <div data-hf-id="hf-q9b0" class="cta-section">
+      <div data-hf-id="hf-taa3" class="tagline">Start today. See what happens tomorrow.</div>
+      <button data-hf-id="hf-ce4n" class="cta-button">Start for Free</button>
+      <div data-hf-id="hf-0alc" class="url">nectool.dk</div>
+    </div>
+
+    <div data-hf-id="hf-7gch" class="progress-bar"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></ script>
+    <script>
+      (function() {
+        const tl = gsap.timeline({ paused: true });
+
+        // Fade in hero image at start
+        tl.to('.hero-image',
+          { opacity: 1, duration: 1.5, ease: 'power2.out' },
+          0
+        );
+
+        // Text animations - message fades in
+        tl.to('.message', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, 1);
+        gsap.set('.message', { y: 20 });
+
+        // CTA section fades in after message
+        tl.to('.cta-section', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, 1.8);
+        gsap.set('.cta-section', { y: 20 });
+
+        // Progress bar - extends across full duration
+        tl.to('.progress-bar', { scaleX: 1, duration: 17, ease: 'power1.inOut' }, 0);
+        gsap.set('.progress-bar', { scaleX: 0, transformOrigin: 'left center' });
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines['frame-3'] = tl;
+      })();
+    </script>
+  </div>
+</template>

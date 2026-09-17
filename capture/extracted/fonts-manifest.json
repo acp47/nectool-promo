@@ -1,0 +1,199 @@
+{
+  "files": [
+    {
+      "file": "montserrat-cyrillic-ext-wght-normal.CO5hGrJv.woff2",
+      "family": "Montserrat",
+      "rawFamily": "Montserrat Thin",
+      "subfamily": "Regular",
+      "postscript": "Montserrat-Thin",
+      "weight": 100,
+      "style": "normal",
+      "variationAxes": [
+        "wght"
+      ],
+      "identified": true,
+      "isIcon": false
+    },
+    {
+      "file": "montserrat-latin-ext-wght-italic.C8utfXoj.woff2",
+      "family": "Montserrat",
+      "rawFamily": "Montserrat Thin",
+      "subfamily": "Italic",
+      "postscript": "Montserrat-ThinItalic",
+      "weight": 100,
+      "style": "italic",
+      "variationAxes": [
+        "wght"
+      ],
+      "identified": true,
+      "isIcon": false
+    },
+    {
+      "file": "montserrat-latin-ext-wght-normal.BsZE-iaG.woff2",
+      "family": "Montserrat",
+      "rawFamily": "Montserrat Thin",
+      "subfamily": "Regular",
+      "postscript": "Montserrat-Thin",
+      "weight": 100,
+      "style": "normal",
+      "variationAxes": [
+        "wght"
+      ],
+      "identified": true,
+      "isIcon": false
+    },
+    {
+      "file": "montserrat-latin-wght-italic.jzfX-GOl.woff2",
+      "family": "Montserrat",
+      "rawFamily": "Montserrat Thin",
+      "subfamily": "Italic",
+      "postscript": "Montserrat-ThinItalic",
+      "weight": 100,
+      "style": "italic",
+      "variationAxes": [
+        "wght"
+      ],
+      "identified": true,
+      "isIcon": false
+    },
+    {
+      "file": "montserrat-latin-wght-normal.l_AIctKy.woff2",
+      "family": "Montserrat",
+      "rawFamily": "Montserrat Thin",
+      "subfamily": "Regular",
+      "postscript": "Montserrat-Thin",
+      "weight": 100,
+      "style": "normal",
+      "variationAxes": [
+        "wght"
+      ],
+      "identified": true,
+      "isIcon": false
+    },
+    {
+      "file": "montserrat-latin-wght-normal.woff2",
+      "family": "Montserrat",
+      "rawFamily": "Montserrat Thin",
+      "subfamily": "Regular",
+      "postscript": "Montserrat-Thin",
+      "weight": 100,
+      "style": "normal",
+      "variationAxes": [
+        "wght"
+      ],
+      "identified": true,
+      "isIcon": false
+    },
+    {
+      "file": "spectral-latin-300-normal.BMSND_f1.woff",
+      "family": "Spectral",
+      "rawFamily": "Spectral Light",
+      "subfamily": "Regular",
+      "postscript": "Spectral-Light",
+      "weight": 300,
+      "style": "normal",
+      "variationAxes": [],
+      "identified": true,
+      "isIcon": false
+    },
+    {
+      "file": "spectral-latin-300-normal.Csl9mA3s.woff2",
+      "family": "Spectral",
+      "rawFamily": "Spectral Light",
+      "subfamily": "Regular",
+      "postscript": "Spectral-Light",
+      "weight": 300,
+      "style": "normal",
+      "variationAxes": [],
+      "identified": true,
+      "isIcon": false
+    },
+    {
+      "file": "spectral-latin-ext-300-italic.CAoQwQlN.woff2",
+      "family": "Spectral",
+      "rawFamily": "Spectral Light",
+      "subfamily": "Italic",
+      "postscript": "Spectral-LightItalic",
+      "weight": 300,
+      "style": "italic",
+      "variationAxes": [],
+      "identified": true,
+      "isIcon": false
+    },
+    {
+      "file": "spectral-latin-ext-300-italic.CeS3VVkJ.woff",
+      "family": "Spectral",
+      "rawFamily": "Spectral Light",
+      "subfamily": "Italic",
+      "postscript": "Spectral-LightItalic",
+      "weight": 300,
+      "style": "italic",
+      "variationAxes": [],
+      "identified": true,
+      "isIcon": false
+    },
+    {
+      "file": "spectral-latin-ext-300-normal.B2IMUBX5.woff2",
+      "family": "Spectral",
+      "rawFamily": "Spectral Light",
+      "subfamily": "Regular",
+      "postscript": "Spectral-Light",
+      "weight": 300,
+      "style": "normal",
+      "variationAxes": [],
+      "identified": true,
+      "isIcon": false
+    },
+    {
+      "file": "spectral-latin-ext-300-normal.BIyTyIW_.woff",
+      "family": "Spectral",
+      "rawFamily": "Spectral Light",
+      "subfamily": "Regular",
+      "postscript": "Spectral-Light",
+      "weight": 300,
+      "style": "normal",
+      "variationAxes": [],
+      "identified": true,
+      "isIcon": false
+    }
+  ],
+  "families": [
+    {
+      "family": "Montserrat",
+      "weights": [
+        100
+      ],
+      "variable": true,
+      "fileCount": 6,
+      "files": [
+        "montserrat-cyrillic-ext-wght-normal.CO5hGrJv.woff2",
+        "montserrat-latin-ext-wght-italic.C8utfXoj.woff2",
+        "montserrat-latin-ext-wght-normal.BsZE-iaG.woff2",
+        "montserrat-latin-wght-italic.jzfX-GOl.woff2",
+        "montserrat-latin-wght-normal.l_AIctKy.woff2",
+        "montserrat-latin-wght-normal.woff2"
+      ]
+    },
+    {
+      "family": "Spectral",
+      "weights": [
+        300
+      ],
+      "variable": false,
+      "fileCount": 6,
+      "files": [
+        "spectral-latin-300-normal.BMSND_f1.woff",
+        "spectral-latin-300-normal.Csl9mA3s.woff2",
+        "spectral-latin-ext-300-italic.CAoQwQlN.woff2",
+        "spectral-latin-ext-300-italic.CeS3VVkJ.woff",
+        "spectral-latin-ext-300-normal.B2IMUBX5.woff2",
+        "spectral-latin-ext-300-normal.BIyTyIW_.woff"
+      ]
+    }
+  ],
+  "unidentified": [],
+  "meta": {
+    "generatedAt": "2026-09-11T07:28:06.336Z",
+    "tool": "fontkit"
+  }
+}

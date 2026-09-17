@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build artifacts
+dist/
+build/
+*.bundle.js
+
+# Large media files
+*.mp4
+*.mov
+*.avi
+*.webm
+*.mkv
+*.flv
+renders/
+
+# Cache files
+.cache/
+.env
+.env.local
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db

@@ -1,0 +1,66 @@
+<template id="frame-2-template">
+  <div data-hf-id="hf-ox6a" id="frame-2" data-composition-id="frame-2" data-width="1920" data-height="1080" style="position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #FFFFFF; padding: 80px; font-family: 'Montserrat', sans-serif; overflow: hidden;">
+
+    <style>
+      /* Hero image container with stacked images for cross-fade */
+      .hero-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1; }
+      .hero-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
+      .hero-image.active { opacity: 1; }
+      .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.15) 100%); }
+
+      /* Content overlay */
+      .content { position: relative; z-index: 5; text-align: center; max-width: 1200px; }
+      .content h2 { font-size: 56px; font-weight: 700; color: #00051B; line-height: 1.2; opacity: 0; }
+      .content p { font-size: 28px; font-weight: 400; line-height: 1.6; color: #B5F7D6; opacity: 0; }
+    </style>
+
+    <!-- Hero images with cross-fade -->
+    <div data-hf-id="hf-hero" class="hero-container">
+      <img data-hf-id="hf-img1" class="hero-image" id="image-1" src="assets/images/nectool-lesson-conflicts.png" alt="Conflict lesson">
+      <img data-hf-id="hf-img2" class="hero-image" id="image-2" src="assets/images/course-conflict-handling.png" alt="Conflict handling">
+      <img data-hf-id="hf-img3" class="hero-image" id="image-3" src="assets/images/nectool-course-mental-reaction.png" alt="Mental reactions">
+      <div data-hf-id="hf-hero-overlay" class="hero-overlay"></div>
+    </div>
+
+    <!-- Text content overlay -->
+    <div data-hf-id="hf-content" class="content">
+      <h2 data-hf-id="hf-title">Expert Knowledge.</h2>
+      <p data-hf-id="hf-subtitle">Actionable Advice. Finally within reach.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></ script>
+    <script>
+      (function() {
+        const tl = gsap.timeline({ paused: true });
+        const FRAME_DURATION = 8; // Frame 2 is 8 seconds
+        const TRANSITION_DURATION = 0.8;
+
+        // Image sequence: 3 images, each visible for ~2.5-2.7 seconds
+        // Image 1: 0-2.5s
+        tl.set('#image-1', { opacity: 1 }, 0);
+        tl.to('#image-1', { opacity: 0, duration: TRANSITION_DURATION, ease: 'power2.inOut' }, 2.5 - TRANSITION_DURATION);
+
+        // Image 2: 2.5-5.0s (with fade in)
+        tl.set('#image-2', { opacity: 0 }, 2.5 - TRANSITION_DURATION);
+        tl.to('#image-2', { opacity: 1, duration: TRANSITION_DURATION, ease: 'power2.inOut' }, 2.5 - TRANSITION_DURATION);
+        tl.to('#image-2', { opacity: 0, duration: TRANSITION_DURATION, ease: 'power2.inOut' }, 5.0 - TRANSITION_DURATION);
+
+        // Image 3: 5.0-8s (with fade in)
+        tl.set('#image-3', { opacity: 0 }, 5.0 - TRANSITION_DURATION);
+        tl.to('#image-3', { opacity: 1, duration: TRANSITION_DURATION, ease: 'power2.inOut' }, 5.0 - TRANSITION_DURATION);
+
+        // Text animations
+        tl.to('.content h2', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, 0.5);
+        gsap.set('.content h2', { y: 20 });
+
+        tl.to('.content p', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, 1.2);
+        gsap.set('.content p', { y: 20 });
+
+        tl.to({}, { duration: FRAME_DURATION }, 0);
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines['frame-2'] = tl;
+      })();
+    </script>
+  </div>
+</template>

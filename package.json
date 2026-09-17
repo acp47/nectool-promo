@@ -1,0 +1,14 @@
+{
+  "name": "nectool-promo",
+  "version": "1.0.0",
+  "description": "30-second product launch video for Nectool",
+  "scripts": {
+    "dev": "npx hyperframes@0.8.34 preview",
+    "check": "npx hyperframes@0.8.34 check",
+    "render": "npx hyperframes@0.8.34 render --quality high --output renders/video.mp4",
+    "publish": "npx hyperframes@0.8.34 publish"
+  },
+  "keywords": ["hyperframes", "video", "nectool"],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,11 @@
+{
+  "provider": "heygen",
+  "speed": 1,
+  "lines": [],
+  "bgm": {
+    "mode": "retrieve",
+    "query": "calm",
+    "blob": "",
+    "arc": ""
+  }
+}

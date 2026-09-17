@@ -1,0 +1,69 @@
+[a] Spring til indhold
+[a] Kom i gang
+[a] Om indholdet
+[a] Find indhold
+[h1] Styrk trivslen i dit arbejdsliv gennem praktiske forløb og konkrete øvelser
+[p] Vi har gjort den tunge viden let og overskuelig, så den passer ind i din travle hverdag som medarbejder eller leder. Frit tilgængeligt for alle.
+[h2] Tag en genvej
+[p] Du skal ikke lede efter værktøjerne. Vi har gjort forarbejdet.
+[p] Fortæl os lidt om din hverdag og din situation, så guider vi dig direkte til det, der gør din dag lettere.
+[span] Kom i gang
+[h2] Nogle gange kræver det blot, at du lukker øjnene
+[p] Mental sundhed behøver ikke være endnu en opgave på din liste. Vi hjælper dig med at skabe pauser, der faktisk kan mærkes.
+[p] Vi har erstattet 40 siders teori med en knap, der giver dig ro i hovedet.
+[span] Find en god pause og styrk din hjerne
+[h2] Spørg om det svære. Få enkelte og konkrete svar.
+[p] Glem alt om uendelige Google-søgninger. Vores AI ved kun det, vi ved. Det betyder, at du får svar, der er renset for støj og baseret direkte på vores faglige indhold. Slut med at lede. Start med at få ro.
+[p] Brug vores AI-chat, som du finder nederst på alle sider. Husk at tillade cookies.
+[h2] Frit at bruge. Dyrt at undvære
+[p] Vi har fyldt hylderne med de mest effektive værktøjer. Alt er testet i virkeligheden og skåret ind til benet, så du kan få overskuddet tilbage med det samme.
+[span] Se alt vores indhold
+[h3] Lær feedback der gør en forskel
+[span] Forløb
+[span] 22 min
+[h3] Find dine pauser - test dig selv
+[span] Forløb
+[span] 16 min
+[h3] Meditation: Et øjebliks hvile fra tankerne
+[span] Øvelse
+[span] 7 min
+[h3] Er du ligevægts- eller spændingssøgende?
+[span] Forløb
+[span] 25 min
+[h3] Få bedre overblik og stærkere koordinering
+[span] Forløb
+[span] 20 min
+[h2] Målrettet restaurationsbranchen
+[p] At arbejde i køkkenet, bag baren eller som tjener for gæster kan være krævende. Sammen med restauranter, caféer og barer har vi udarbejdet forløb, der kan forbedre samarbejdet, trygheden og jeres service.
+[span] Se hele pakken
+[h2] Skabt til mediebranchens pres
+[p] Gennem vores samarbejde med mediebranchen har vi udarbejdet forløb og øvelser, der fungerer særligt godt i det arbejdsmiljø. Værktøjer, der kan gøre dig klogere på dig selv og styrke teamets dynamik.
+[span] Få en opdateret værktøjskasse
+[h2] Ekspertviden på bare 20 minutter
+[p] Glem alt om uoverskuelige kurser. Vi giver dig den vigtigste ekspertviden hurtigt og præcist.
+[p] Du får fundamentet på plads og ny forståelse for din hverdag, før din kaffe er blevet kold.
+[p] Viden er skabt i tæt samarbejde med brancherne, testet og skræddersyet til din hverdag.
+[span] Forstå, hvordan vi arbejder med indholdet
+[p] Nectool / Necto
+[p] Gl. Kongevej 11-13
+[p] 1610 København
+[p] Email: info@necto.info
+[p] CVR: 44043009
+[a] Om Nectool
+[a] En transformation af indhold
+[a] Forløb til restaurationsbranchen
+[a] Forløb til mediebranchen
+[p] Gratis at bruge. Afprøvet i praksis og udviklet sammen med branchen. Vi omsætter kompleks viden til konkrete værktøjer til et sundere arbejdsliv.
+[p] Støttet af:
+[h2] Gør Nectool.dk bedre
+[p] Har du opdaget en fejl eller fået en god idé? Vi optimerer løbende og bliver glad for input, ideer og nye måder at anskue tingene på. Hvad drømmer du om?
+[span] Giv os din feedback eller ide
+[h2] Bliv en del af forandringen
+[p] Vi søger dig, der har lyst til at deltage i vores samskabelse og være med til at forme platformen. Tilmeld dig vores brugerpanel i dag.
+[span] Tilmeld dig brugerpanelet
+[a] Persondata- og cookiepolitik
+[button] Cookieindstillinger
+[li] © 2026 Necto
+[p] Linket er kopieret til din udklipsholder.
+[p] Denne knap åbner en Typeform-formular. Accepter cookies fra Typeform for at bruge den.
+[button] Accepter og åbn

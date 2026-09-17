@@ -1,0 +1,169 @@
+<template id="frame-1-template">
+  <div data-hf-id="hf-4p3m" id="frame-1" data-composition-id="frame-1" data-width="1920" data-height="1080" style="position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #FFFFFF 0%, rgba(50, 108, 222, 0.08) 100%); font-family: 'Montserrat', sans-serif; overflow: hidden;">
+
+    <style>
+      /* Hero image container */
+      .hero-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1; }
+      .hero-image { width: 100%; height: 100%; object-fit: cover; opacity: 0; }
+      .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(50, 108, 222, 0.1) 100%); }
+
+      /* Content and text */
+      .content { text-align: center; position: relative; z-index: 5; max-width: 1200px; }
+      .accent-line { width: 60px; height: 4px; background: #326CDE; margin: 0 auto 40px; border-radius: 2px; opacity: 0; }
+      h1 { font-size: 72px; font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; color: #00051B; margin-bottom: 30px; opacity: 0; }
+      .subtitle { font-size: 28px; font-weight: 400; line-height: 1.6; color: #B5F7D6; opacity: 0; }
+
+      /* Editorial Emphasis Caption Styles */
+      .frame-1-caption-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+      .editorial-caption-stage { position: relative; width: 1600px; max-width: 90vw; text-align: center; }
+      .caption-block { position: absolute; opacity: 0; transform-origin: center center; will-change: transform, opacity; backface-visibility: hidden; left: 50%; transform: translateX(-50%); }
+      .caption-line { display: flex; align-items: center; justify-content: center; gap: 16px; line-height: 1.2; white-space: nowrap; flex-wrap: wrap; max-width: 1600px; overflow: visible; }
+      .caption-line + .caption-line { margin-top: 12px; }
+      .word { display: inline-block; font-family: "Montserrat", sans-serif; will-change: transform, opacity; backface-visibility: hidden; text-shadow: 0 2px 8px rgba(255, 255, 255, 0.4), 0 4px 16px rgba(255, 255, 255, 0.2); }
+      .word--normal { font-size: 48px; font-weight: 400; color: #00051B; }
+      .word--emphasis { font-size: 72px; font-weight: 700; color: #326CDE; letter-spacing: -0.02em; }
+    </style>
+
+    <!-- Hero image: Workplace frustration -->
+    <div data-hf-id="hf-hero" class="hero-container">
+      <img data-hf-id="hf-hero-img" class="hero-image" src="assets/images/workplace-conflicts.png" alt="Workplace conflicts">
+      <div data-hf-id="hf-hero-overlay" class="hero-overlay"></div>
+    </div>
+
+    <!-- Editorial Emphasis Caption Overlay -->
+    <div data-hf-id="hf-cap1" id="frame-1-editorial-caption" data-composition-id="frame-1-editorial-caption" class="frame-1-caption-container">
+      <div data-hf-id="hf-n370" class="editorial-caption-stage" id="caption-stage"></div>
+    </div>
+
+    <div data-hf-id="hf-mcm7" class="content">
+      <div data-hf-id="hf-yg89" class="accent-line"></div>
+      <h1 data-hf-id="hf-v1cm">Nectool</h1>
+      <p data-hf-id="hf-5cm0" class="subtitle">There's a better way.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></ script>
+    <script>
+      // Editorial Emphasis Caption Setup
+      (function() {
+        var W = [
+          { text: "Endless", start: 0.0, end: 0.4 },
+          { text: "meetings.", start: 0.4, end: 0.8 },
+          { text: "Tight", start: 1.0, end: 1.4 },
+          { text: "deadlines.", start: 1.4, end: 1.8 },
+          { text: "Struggling", start: 2.2, end: 2.7 },
+          { text: "with", start: 2.7, end: 2.95 },
+          { text: "colleagues.", start: 2.95, end: 3.5 },
+        ];
+
+        var BLOCKS = [
+          { line1: [[0, "n"], [1, "n"]], line2: null },
+          { line1: [[2, "n"], [3, "n"]], line2: null },
+          { line1: [[4, "e"], [5, "n"], [6, "n"]], line2: null },
+        ];
+
+        var CLASS_MAP = { n: "word word--normal", e: "word word--emphasis" };
+        var DURATION = 5;
+
+        function buildBlocks() {
+          var stage = document.getElementById("caption-stage");
+          BLOCKS.forEach(function (block, bi) {
+            var el = document.createElement("div");
+            el.className = "caption-block";
+            el.id = "b" + bi;
+
+            var l1 = document.createElement("div");
+            l1.className = "caption-line";
+            l1.id = "b" + bi + "L1";
+            block.line1.forEach(function (pair, wi) {
+              var span = document.createElement("span");
+              span.className = CLASS_MAP[pair[1]];
+              span.id = "b" + bi + "L1w" + wi;
+              span.textContent = W[pair[0]].text;
+              l1.appendChild(span);
+            });
+            el.appendChild(l1);
+
+            if (block.line2) {
+              var l2 = document.createElement("div");
+              l2.className = "caption-line";
+              l2.id = "b" + bi + "L2";
+              block.line2.forEach(function (pair, wi) {
+                var span = document.createElement("span");
+                span.className = CLASS_MAP[pair[1]];
+                span.id = "b" + bi + "L2w" + wi;
+                span.textContent = W[pair[0]].text;
+                l2.appendChild(span);
+              });
+              el.appendChild(l2);
+            }
+
+            stage.appendChild(el);
+          });
+        }
+
+        buildBlocks();
+
+        if (typeof gsap !== "undefined") {
+          var captionTl = gsap.timeline({ paused: true });
+
+          BLOCKS.forEach(function (block, bi) {
+            var el = document.getElementById("b" + bi);
+            var start = W[block.line1[0][0]].start;
+            var nextStart = bi < BLOCKS.length - 1 ? W[BLOCKS[bi + 1].line1[0][0]].start : DURATION;
+
+            BLOCKS.forEach(function (_, oi) {
+              if (oi !== bi) captionTl.set(document.getElementById("b" + oi), { opacity: 0 }, start);
+            });
+
+            captionTl.set(el, { opacity: 1, scale: 0.95, y: 20 }, start);
+            captionTl.to(el, { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: "power2.out" }, start);
+
+            block.line1.forEach(function (pair, wi) {
+              var wordEl = document.getElementById("b" + bi + "L1w" + wi);
+              var wordStart = W[pair[0]].start;
+              captionTl.set(wordEl, { opacity: 0, scale: 0.9 }, start);
+              captionTl.to(wordEl, { opacity: 1, scale: 1, duration: 0.2, ease: "power2.out" }, wordStart);
+            });
+
+            if (block.line2) {
+              block.line2.forEach(function (pair, wi) {
+                var wordEl = document.getElementById("b" + bi + "L2w" + wi);
+                var wordStart = W[pair[0]].start;
+                captionTl.set(wordEl, { opacity: 0, scale: 0.9 }, start);
+                captionTl.to(wordEl, { opacity: 1, scale: 1, duration: 0.2, ease: "power2.out" }, wordStart);
+              });
+            }
+
+            captionTl.to(el, { opacity: 0, duration: 0.3, ease: "power2.in" }, nextStart - 0.2);
+          });
+
+          captionTl.to({}, { duration: DURATION }, 0);
+          window.__timelines = window.__timelines || {};
+          window.__timelines["frame-1-editorial-caption"] = captionTl;
+        }
+      })();
+    </script>
+    <script>
+      (function() {
+        const tl = gsap.timeline({ paused: true });
+
+        // Fade in hero image at start
+        tl.to('.hero-image',
+          { opacity: 1, duration: 1, ease: 'power2.out' },
+          0
+        );
+
+        // Text animations (hidden in this frame - captions take focus)
+        tl.to('.accent-line', { opacity: 0, duration: 0 }, 0);
+        tl.to('h1', { opacity: 0, duration: 0 }, 0);
+        tl.to('.subtitle', { opacity: 0, duration: 0 }, 0);
+
+        gsap.set('h1', { y: 20 });
+        gsap.set('.subtitle', { y: 20 });
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines['frame-1'] = tl;
+      })();
+    </script>
+  </div>
+</template>
